@@ -1,0 +1,13 @@
+Package: MSTweedie
+Type: Package
+Title: Multi-source Sparse Tweedie Modelling
+Version: 0.1.0
+Author: Simon Fontaine, Yi Yang, Bo Fan, Wei Qian and Yuwen Gu.
+Maintainer: Simon Fontaine <fontaines@dms.umontreal.ca>
+Description: Extending the HDtweedie package to multi-source data, this package implements multi-source sparse Tweedie modelling. Given non-negative data with excess zeroes (typically insurance claim data), the algorithm fits the Tweedie distribution while penalizing the coefficient. Flexible regularization is achieved by an adjustable penalty factor that can balance between-feature sparsity and between-sources sparsity within features.
+License: GPL-2
+Depends: R (>= 2.10)
+Encoding: UTF-8
+LazyData: true
+Imports: grDevices, stats, graphics, methods
+RoxygenNote: 6.0.1

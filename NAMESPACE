@@ -1,0 +1,15 @@
+useDynLib(MSTweedie)
+export(MSTweedie, cv.MSTweedie, coef.cv.MSTweedie, predict.cv.MSTweedie,
+       kkt.check, plot.MSTweedie, plot.cv.MSTweedie, coef.MSTweedie,
+       predict.MSTweedie, print.MSTweedie)
+importFrom("grDevices", "grey.colors")
+importFrom("graphics", "abline", "lines", "par", "plot","plot.default", "points", "segments")
+importFrom("methods", "cbind2", "rbind2")
+importFrom("stats", "sd")
+S3method('print', 'MSTweedie')
+S3method('predict', 'MSTweedie')
+S3method('plot', 'MSTweedie')
+S3method('coef', 'MSTweedie')
+S3method('predict', 'cv.MSTweedie')
+S3method('plot', 'cv.MSTweedie')
+S3method('coef', 'cv.MSTweedie')
