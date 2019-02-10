@@ -122,7 +122,7 @@ cv.MSTweedie <- function(x, y, w, source, rho, nlambda = 100, lambda, lambda.min
    ###Fit the model once
       MSTweedie.obj <- MSTweedie(x=x , y=y, w=w, rho=rho, lambda = lambda,
                                  nlambda = nlambda, lambda.min = lambda.min,
-                                 kktstop = kktstop, reg=reg, pf=pf, alpha=alpha,...)
+                                 kktstop = kktstop, reg=reg, pf=pf, alpha=alpha, maxit=maxit,...)
       lambda <- MSTweedie.obj$lambda
 
       outlist <- as.list(seq(nfolds))
@@ -148,7 +148,7 @@ cv.MSTweedie <- function(x, y, w, source, rho, nlambda = 100, lambda, lambda.min
          ## fit the model on train data
          fit <- MSTweedie(x = x.train, y = y.train, w=w.train,
                                    rho = rho, lambda = lambda, kktstop = FALSE,
-                                   reg=reg, pf=pf,alpha=alpha,...)
+                                   reg=reg, pf=pf,alpha=alpha, maxit=maxit,...)
          ## get prediction on test data
          pred <- lapply(seq(length(fit$lambda)), function(l){
             predict.MSTweedie(fit, x.test, seq(ntasks),l, type = 'response')
