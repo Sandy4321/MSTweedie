@@ -3,7 +3,7 @@ MSTweedie<-function(x,y,w,source,rho=1.5,
                     x.normalize=T,eps, sr=T, kktstop=F,
                     reg = c('L2','Linf'),alpha = 0,
                     dfmax=nvars+1,pmax=min(dfmax*1.2,nvars),
-                    pf=rep(1,nvars),maxit=1e4)
+                    pf=rep(1,nvars),maxit=1e6)
 {
    this.call=match.call()
    t0 <- proc.time()

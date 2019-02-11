@@ -1,7 +1,7 @@
 cv.MSTweedie <- function(x, y, w, source, rho, nlambda = 100, lambda, lambda.min = 1e-3,
                          nfolds = 10, kktstop=F, foldid, adaptive = 0, x.normalize = TRUE,
                          reg = c('L2','Linf'),eps = 5e-4, sr = TRUE,
-                         maxit = 1e4, pf = rep(1,nvars), alpha = 0, ...) {
+                         maxit = 1e6, pf = rep(1,nvars), alpha = 0, ...) {
    t0 <- proc.time()
    if (missing(rho)) rho <- 1.5
    pred.loss <- "deviance"
