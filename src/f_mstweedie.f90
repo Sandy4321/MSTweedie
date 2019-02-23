@@ -385,7 +385,7 @@ SUBROUTINE f_mstweedie(ntasks, nobs, nobsmax, nvars, w, x, y, pf, iex, sr, kktst
                         ELSEIF ( reg == 2 ) THEN
                             !norm = sqrt(sum(oldb*oldb)) - sqrt(sum(b(:,j)*b(:,j)))
                         ENDIF
-                        stdesc(npass) = stdesc(npass) + al * pf(j) * norm
+                        !stdesc(npass) = stdesc(npass) + al * pf(j) * norm
                     ENDIF
                     ! - descent difference of objective fn -
                     DO k = 1,ntasks
