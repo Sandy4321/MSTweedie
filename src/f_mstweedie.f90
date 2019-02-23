@@ -378,10 +378,12 @@ SUBROUTINE f_mstweedie(ntasks, nobs, nobsmax, nvars, w, x, y, pf, iex, sr, kktst
                         ENDIF
 
                         ! - descent difference update of penalty -
+                        ! - disabled feature, i think the index j was the problem...
+                        ! - let future simon deal with this
                         IF ( reg == 0 ) THEN
-                            norm =  maxval(abs(oldb)) - maxval(abs(b(:,j)))
+                            !norm =  maxval(abs(oldb)) - maxval(abs(b(:,j)))
                         ELSEIF ( reg == 2 ) THEN
-                            norm = sqrt(sum(oldb*oldb)) - sqrt(sum(b(:,j)*b(:,j)))
+                            !norm = sqrt(sum(oldb*oldb)) - sqrt(sum(b(:,j)*b(:,j)))
                         ENDIF
                         stdesc(npass) = stdesc(npass) + al * pf(j) * norm
                     ENDIF

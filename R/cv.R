@@ -181,17 +181,17 @@ cv.MSTweedie <- function(x, y, w, source, rho, nlambda = 100, lambda, lambda.min
 
 
 ##wrappers
-coef.cv.MSTweedie <- function(cv, s = c("lambda.1se", "lambda.min")) {
+coef.cv.MSTweedie <- function(cv.MSTweedie.obj, s = c("lambda.1se", "lambda.min")) {
    if (missing(s))s<-"lambda.1se"
    if (is.numeric(s)){
-      l <- match(s,cv$lambda)
+      l <- match(s,cv.MSTweedie.obj$lambda)
    }else if(is.integer(s)){
       l<-s
    }else if (is.character(s)) {
          s <- match.arg(s)
-         l <- match(cv[[s]],cv$lambda)
+         l <- match(cv.MSTweedie.obj[[s]],cv.MSTweedie.obj$lambda)
    }else stop("Invalid form for s")
-   coef.MSTweedie(cv$MSTweedie.fit, s = l )
+   coef.MSTweedie(cv.MSTweedie.obj$MSTweedie.fit, s = l )
 }
 predict.cv.MSTweedie <- function(object, newx, s = c("lambda.1se",
                                                      "lambda.min")) {
